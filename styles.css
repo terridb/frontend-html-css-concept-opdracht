@@ -21,7 +21,7 @@
     padding: 0;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Merriweather", serif;
 }
 
@@ -46,8 +46,26 @@ h1 {
     font-weight: 700;
 }
 
-.inner-container p {
+h2 {
+    font-size: 32px;
+}
+
+header p {
     font-size: 18px;
+}
+
+#introduction p {
+    font-size: 20px;
+    color: var(--standard-text)
+}
+
+#introduction a {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+#introduction a:visited {
+    color: var(--purple);
 }
 
 button {
@@ -70,7 +88,14 @@ body {
     min-height: 100vh;
 }
 /* --------------- 3.1 Reusables ----------------------- */
-
+.inner-container {
+    border: 3px orange dashed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 900px;
+    margin-top: 100px;
+}
 /* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
@@ -111,15 +136,16 @@ nav ul {
     margin-right: 60px;
 }
 
-.inner-container {
-    /*border: 3px orange dashed;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+header .inner-container {
+    /*!*border: 3px orange dashed;*!*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
     align-items: center;
     flex-basis: 250px;
-    width: 900px;
-    margin-top: 100px;
+    /*width: 900px;*/
+    /*margin-top: 100px;*/
     color: #FFF;
 }
 
@@ -141,10 +167,27 @@ header .squiggle-line-stripe {
     bottom: 0;
 }
 
-/*.inner-container p {*/
-/*    padding-top: 20px;*/
-/*}*/
-
 /* --------------- 4.2 Introduction ------------------- */
+#introduction {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#introduction .inner-container {
+    color: var(--purple);
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#introduction h2{
+    margin-bottom: 20px;
+}
+
+#introduction p{
+    margin-top: 50px;
+}
+
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
