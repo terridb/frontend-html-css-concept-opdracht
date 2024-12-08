@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body,
-button{
+button {
     font-family: "Roboto", sans-serif;
 }
 
@@ -54,48 +54,54 @@ header p {
     font-size: 18px;
 }
 
-#introduction p {
+#introduction p,
+#studies p {
     font-size: 20px;
     color: var(--standard-text)
 }
 
-#introduction a {
-    color: var(--purple);
-    text-decoration: none;
-}
-
+#introduction a,
 #introduction a:visited {
     color: var(--purple);
+    text-decoration: none;
 }
 
 button {
     font-size: 12px;
 }
 
-nav a {
+nav a,
+nav a:visited {
     text-decoration: none;
     color: #FFF;
     font-size: 18px;
     font-weight: 300;
 }
 
-nav a:visited {
-    color: #FFF;
+#studies a,
+#studies a:visited {
+    color: var(--purple);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 body {
     min-height: 100vh;
 }
+
 /* --------------- 3.1 Reusables ----------------------- */
-.inner-container {
-    border: 3px orange dashed;
+.small-inner-container {
+    /*border: 3px orange dashed;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 900px;
     margin-top: 100px;
 }
+
 /* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
@@ -136,7 +142,7 @@ nav ul {
     margin-right: 60px;
 }
 
-header .inner-container {
+header .small-inner-container {
     /*!*border: 3px orange dashed;*!*/
     /*display: flex;*/
     /*flex-direction: column;*/
@@ -149,7 +155,7 @@ header .inner-container {
     color: #FFF;
 }
 
-.inner-container button {
+.small-inner-container button {
     border: none;
     background-color: var(--pink);
     color: #FFF;
@@ -158,7 +164,7 @@ header .inner-container {
     padding-bottom: 15px;
     width: 200px;
     border-radius: 25px;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 header .squiggle-line-stripe {
@@ -175,19 +181,88 @@ header .squiggle-line-stripe {
 
 }
 
-#introduction .inner-container {
+#introduction .small-inner-container {
     color: var(--purple);
     text-align: center;
     margin-bottom: 100px;
 }
 
-#introduction h2{
+#introduction h2 {
     margin-bottom: 20px;
 }
 
-#introduction p{
+#introduction p {
     margin-top: 50px;
 }
 
+/* --------------- 4.3 Studies ------------------- */
+#studies {
+    background-color: var(--project-background);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*border: 2px blue dashed;*/
+}
+
+.bigger-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    margin: 100px 15px 100px;
+    /*border: 2px dashed red;*/
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*border: 2px dashed orange;*/
+    margin-bottom: 100px;
+    max-width: 1300px;
+}
+
+article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*border: 2px dashed forestgreen;*/
+    margin-left: 20px;
+    padding-right: 20px;
+    flex-basis: 400px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.article-image {
+    max-width: 60%;
+    /*border: 2px dashed red;*/
+}
+
+.article-image img {
+    width: 100%;
+    box-shadow: 0 24px 24px rgba(0, 0, 0, 0.2);
+}
+
+.squiggle-line {
+    width: 60px;
+    margin: 30px 0 40px 0;
+}
+
+.article-content p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#studies .project-link {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
