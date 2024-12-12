@@ -50,6 +50,10 @@ h2 {
     font-size: 32px;
 }
 
+h3 {
+    font-size: 24px;
+}
+
 header p {
     font-size: 18px;
 }
@@ -84,6 +88,15 @@ nav a:visited {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 16px;
+}
+
+#services h3 {
+    color: var(--purple);
+}
+
+#services p {
+    color: var(--service-tile);
     font-size: 16px;
 }
 
@@ -178,7 +191,6 @@ header .squiggle-line-stripe {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
 
 #introduction .small-inner-container {
@@ -214,7 +226,7 @@ header .squiggle-line-stripe {
     /*border: 2px dashed red;*/
 }
 
-article {
+#studies article {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -224,11 +236,11 @@ article {
     max-width: 1300px;
 }
 
-article:nth-child(even) {
+#studies article:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-.article-content {
+#studies .article-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -240,22 +252,22 @@ article:nth-child(even) {
     flex-shrink: 0;
 }
 
-.article-image {
+#studies .article-image {
     max-width: 60%;
     /*border: 2px dashed red;*/
 }
 
-.article-image img {
+#studies .article-image img {
     width: 100%;
     box-shadow: 0 24px 24px rgba(0, 0, 0, 0.2);
 }
 
-.squiggle-line {
+#studies .squiggle-line {
     width: 60px;
     margin: 30px 0 40px 0;
 }
 
-.article-content p {
+#studies .article-content p {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -263,6 +275,43 @@ article:nth-child(even) {
 #studies .project-link {
     margin-top: 40px;
     margin-bottom: 10px;
+}
+
+/* --------------- 4.4 Services ------------------- */
+#services {
+    display: flex;
+    flex-direction: row;
+    /*border: 2px red dashed;*/
+    justify-content: center;
+}
+
+.services-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*border: 2px dashed hotpink;*/
+    justify-content: center;
+    align-content: center;
+    margin: 100px 100px 100px;
+    gap: 40px;
+}
+
+#services article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-basis: 380px;
+    min-height: 350px;
+    padding: 40px 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: solid 2px var(--purple);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.grid-icon {
+    height: 60px;
 }
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
