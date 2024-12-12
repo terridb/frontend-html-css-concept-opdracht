@@ -26,7 +26,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body,
-button {
+button,
+input,
+textarea {
     font-family: "Roboto", sans-serif;
 }
 
@@ -107,12 +109,10 @@ body {
 
 /* --------------- 3.1 Reusables ----------------------- */
 .small-inner-container {
-    /*border: 3px orange dashed;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 900px;
-    margin-top: 100px;
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -133,7 +133,6 @@ header {
 }
 
 nav {
-    /*border: 2px dashed red;*/
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -146,7 +145,6 @@ nav {
 }
 
 nav ul {
-    /*border: 2px dashed green;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -156,19 +154,13 @@ nav ul {
 }
 
 header .small-inner-container {
-    /*!*border: 3px orange dashed;*!*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
     align-items: center;
     flex-basis: 250px;
-    /*width: 900px;*/
-    /*margin-top: 100px;*/
+    margin-top: 100px;
     color: #FFF;
 }
 
-.small-inner-container button {
+header button {
     border: none;
     background-color: var(--pink);
     color: #FFF;
@@ -178,6 +170,7 @@ header .small-inner-container {
     width: 200px;
     border-radius: 25px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 header .squiggle-line-stripe {
@@ -197,6 +190,7 @@ header .squiggle-line-stripe {
     color: var(--purple);
     text-align: center;
     margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 #introduction h2 {
@@ -281,7 +275,6 @@ header .squiggle-line-stripe {
 #services {
     display: flex;
     flex-direction: row;
-    /*border: 2px red dashed;*/
     justify-content: center;
 }
 
@@ -289,7 +282,6 @@ header .squiggle-line-stripe {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /*border: 2px dashed hotpink;*/
     justify-content: center;
     align-content: center;
     margin: 100px 100px 100px;
@@ -314,4 +306,86 @@ header .squiggle-line-stripe {
     height: 60px;
 }
 
+/* --------------- 4.5 Contact ------------------- */
+#contact {
+    background: var(--blue);
+    background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#contact .small-inner-container {
+    align-items: center;
+    color: white;
+
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    font-size: 42px;
+}
+
+#contact p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+#contact label {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+input,
+textarea {
+    border-radius: 3px;
+    border: 1px solid var(--service-tile);
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+#contact button {
+    border: none;
+    background-color: var(--pink);
+    color: #FFF;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 150px;
+    border-radius: 25px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: -50px;
+    left: calc(50% - 75px);
+    cursor: pointer;
+
+}
+
+
+/* --------------- 4.6 Footer ------------------- */
+footer {
+    background: var(--standard-text);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 12px;
+}
 /* ------------------------------- 5. Media Queries -------------------------------- */
