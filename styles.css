@@ -60,6 +60,24 @@ header p {
     font-size: 18px;
 }
 
+footer p {
+    font-size: 12px;
+    color: white;
+}
+
+#contact label {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#contact h2 {
+    font-size: 42px;
+}
+
+#contact p {
+    font-size: 18px;
+}
+
 #introduction p,
 #studies p {
     font-size: 20px;
@@ -115,6 +133,17 @@ body {
     width: 900px;
 }
 
+button {
+    border: none;
+    background-color: var(--pink);
+    color: #FFF;
+    text-transform: uppercase;
+    border-radius: 25px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
 /* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
@@ -161,21 +190,25 @@ header .small-inner-container {
 }
 
 header button {
-    border: none;
-    background-color: var(--pink);
-    color: #FFF;
-    text-transform: uppercase;
     padding-top: 15px;
     padding-bottom: 15px;
     width: 200px;
-    border-radius: 25px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
 header .squiggle-line-stripe {
     position: absolute;
     height: 80px;
+    bottom: 0;
+}
+/*Creates the tilted bottom on the header*/
+header::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100vw solid #FFF;
+    position: absolute;
     bottom: 0;
 }
 
@@ -184,21 +217,46 @@ header .squiggle-line-stripe {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: relative;
 }
 
 #introduction .small-inner-container {
     color: var(--purple);
     text-align: center;
     margin-bottom: 100px;
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 #introduction h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #introduction p {
-    margin-top: 50px;
+    margin-top: 80px;
+}
+
+/*Adds floating words on the background*/
+#introduction::before {
+    content: "hello";
+    position: absolute;
+    font-weight: 800;
+    font-size: 500px;
+    color: var(--floating-words);
+    z-index: -1;
+    top: -30px;
+}
+
+/*Created tilted top at services, bottom of introduction*/
+#introduction::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;
+    border-right: 100vw solid #FFF;
+    position: absolute;
+    bottom: -50px;
+    z-index: 1;
 }
 
 /* --------------- 4.3 Studies ------------------- */
@@ -207,7 +265,31 @@ header .squiggle-line-stripe {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /*border: 2px blue dashed;*/
+    position: relative;
+    z-index: -2;
+}
+
+/*Adds floating words on the background*/
+#studies::before {
+    content: "work";
+    position: absolute;
+    font-weight: 800;
+    font-size: 500px;
+    color: #FFF;
+    z-index: -1;
+    top: 0;
+}
+
+/*Creates the tilted bottom at services*/
+#studies::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100vw solid #FFF;
+    position: absolute;
+    bottom: 0;
 }
 
 .bigger-inner-container {
@@ -216,8 +298,7 @@ header .squiggle-line-stripe {
     justify-content: center;
     align-items: center;
     flex-basis: 100%;
-    margin: 100px 15px 100px;
-    /*border: 2px dashed red;*/
+    margin: 300px 15px 100px;
 }
 
 #studies article {
@@ -225,7 +306,6 @@ header .squiggle-line-stripe {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /*border: 2px dashed orange;*/
     margin-bottom: 100px;
     max-width: 1300px;
 }
@@ -238,7 +318,6 @@ header .squiggle-line-stripe {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*border: 2px dashed forestgreen;*/
     margin-left: 20px;
     padding-right: 20px;
     flex-basis: 400px;
@@ -248,7 +327,6 @@ header .squiggle-line-stripe {
 
 #studies .article-image {
     max-width: 60%;
-    /*border: 2px dashed red;*/
 }
 
 #studies .article-image img {
@@ -276,6 +354,18 @@ header .squiggle-line-stripe {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: relative;
+}
+
+/*Adds floating words on the background*/
+#services::before {
+    content: "services";
+    position: absolute;
+    font-weight: 800;
+    font-size: 280px;
+    color: var(--floating-words);
+    z-index: -1;
+    top: 0;
 }
 
 .services-grid {
@@ -284,7 +374,7 @@ header .squiggle-line-stripe {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    margin: 100px 100px 100px;
+    margin: 235px 100px 100px;
     gap: 40px;
 }
 
@@ -300,6 +390,7 @@ header .squiggle-line-stripe {
     flex-grow: 0;
     border: solid 2px var(--purple);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background: #FFF;
 }
 
 .grid-icon {
@@ -316,21 +407,29 @@ header .squiggle-line-stripe {
     align-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
+    position: relative;
 }
+
+/*Created tilted top at contact*/
+#contact::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;
+    border-right: 100vw solid #FFF;
+    position: absolute;
+    top: 0;
+}
+
 #contact .small-inner-container {
     align-items: center;
-    color: white;
-
+    color: #FFF;
 }
 
-#contact h2 {
-    margin-bottom: 20px;
-    font-size: 42px;
-}
-
+#contact h2,
 #contact p {
     margin-bottom: 20px;
-    font-size: 18px;
 }
 
 #contact form {
@@ -338,11 +437,6 @@ header .squiggle-line-stripe {
     flex-direction: column;
     width: 100%;
     position: relative;
-}
-
-#contact label {
-    font-weight: 700;
-    font-size: 14px;
 }
 
 input,
@@ -359,33 +453,22 @@ textarea:focus {
 }
 
 #contact button {
-    border: none;
-    background-color: var(--pink);
-    color: #FFF;
-    text-transform: uppercase;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 150px;
-    border-radius: 25px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     position: absolute;
     bottom: -50px;
     left: calc(50% - 75px);
-    cursor: pointer;
-
 }
 
 
 /* --------------- 4.6 Footer ------------------- */
 footer {
     background: var(--standard-text);
-    color: white;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-footer p {
-    font-size: 12px;
-}
+
 /* ------------------------------- 5. Media Queries -------------------------------- */
