@@ -158,6 +158,7 @@ header {
     background: var(--blue);
     background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
     position: relative;
+    z-index: 0;
 }
 
 /*Adds noise texture to the header image*/
@@ -171,6 +172,7 @@ header::before {
     background-size: auto;
     width: 100%;
     height: 100%;
+    z-index: -1;
 }
 
 nav {
@@ -183,6 +185,7 @@ nav {
     flex-grow: 0;
     flex-shrink: 0;
     color: #FFF;
+    z-index: 1;
 }
 
 nav ul {
@@ -278,7 +281,7 @@ header::after {
     flex-direction: row;
     justify-content: center;
     position: relative;
-    z-index: -2;
+    z-index: 0;
 }
 
 /*Adds floating words on the background*/
@@ -372,6 +375,24 @@ header::after {
 #studies .project-link {
     margin-top: 40px;
     margin-bottom: 10px;
+    position: relative;
+}
+
+/*Adds effect to the project link*/
+.project-link::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: var(--purple);
+    position: absolute;
+    bottom: 9px;
+    left: 130px;
+    transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+    width: 60px;
 }
 
 /* --------------- 4.4 Services ------------------- */
@@ -435,7 +456,7 @@ header::after {
     padding-top: 100px;
     padding-bottom: 100px;
     position: relative;
-    z-index: -2;
+    z-index: 0;
 }
 
 /*Created tilted top at contact*/
