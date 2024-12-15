@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 /*////////////////////////
     Table of Contents
     1. Global Styles
@@ -9,10 +11,10 @@
         4.1 Header
         4.2 Introduction
         etc.
-////////////////////////*/
+    5. Media queries
+ /*!///////////////////////!*/
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -41,27 +43,31 @@ textarea {
     --service-tile: #7A7A7A;
 }
 
+body {
+    min-height: 100vh;
+}
+
 /* ------------------------------- 2. Typography ----------------------------------- */
 h1 {
-    font-size: 46px;
+    font-size: 36px;
     font-weight: 700;
 }
 
-h2 {
-    font-size: 32px;
-}
-
+h2,
 h3 {
     font-size: 24px;
 }
 
 header p {
-    font-size: 18px;
+    font-size: 28px;
+}
+
+#contact p {
+    font-size: 20px;
 }
 
 footer p {
     font-size: 12px;
-    color: white;
 }
 
 #contact label {
@@ -70,11 +76,7 @@ footer p {
 }
 
 #contact h2 {
-    font-size: 42px;
-}
-
-#contact p {
-    font-size: 18px;
+    font-size: 36px;
 }
 
 #introduction p,
@@ -90,15 +92,19 @@ footer p {
 }
 
 button {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 nav a,
 nav a:visited {
     text-decoration: none;
     color: #FFF;
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#studies h2 {
+    font-size: 36px;
 }
 
 #studies a,
@@ -120,16 +126,15 @@ nav a:visited {
 }
 
 /* ------------------------------- 3. Layout --------------------------------------- */
-body {
-    min-height: 100vh;
-}
 
 /* --------------- 3.1 Reusables ----------------------- */
 .small-inner-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 900px;
+    width: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 button {
@@ -137,11 +142,10 @@ button {
     background-color: var(--pink);
     color: #FFF;
     text-transform: uppercase;
-    border-radius: 25px;
+    border-radius: 30px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
-
 
 /* --------------- 3.2 Other --------------------------- */
 
@@ -178,7 +182,7 @@ header::before {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     align-items: center;
     flex-basis: 60px;
     width: 100%;
@@ -194,27 +198,27 @@ nav ul {
     justify-content: space-between;
     flex-basis: 400px;
     list-style: none;
-    margin-right: 60px;
 }
 
 header .small-inner-container {
     align-items: center;
-    flex-basis: 250px;
+    flex-basis: 300px;
     margin-top: 100px;
     color: #FFF;
 }
 
 header button {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 280px;
 }
 
 header .squiggle-line-stripe {
     position: absolute;
-    height: 80px;
+    height: 120px;
     bottom: 0;
 }
+
 /*Creates the tilted bottom on the header*/
 header::after {
     content: "";
@@ -238,7 +242,7 @@ header::after {
 #introduction .small-inner-container {
     color: var(--purple);
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     margin-top: 150px;
 }
 
@@ -247,7 +251,7 @@ header::after {
 }
 
 #introduction p {
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 /*Adds floating words on the background*/
@@ -255,10 +259,10 @@ header::after {
     content: "hello";
     position: absolute;
     font-weight: 800;
-    font-size: 500px;
+    font-size: 175px;
     color: var(--floating-words);
     z-index: -1;
-    top: -30px;
+    top: 80px;
 }
 
 /*Created tilted top at services, bottom of introduction*/
@@ -270,7 +274,7 @@ header::after {
     border-bottom: 50px solid transparent;
     border-right: 100vw solid #FFF;
     position: absolute;
-    bottom: -50px;
+    bottom: -49px;
     z-index: 1;
 }
 
@@ -289,10 +293,10 @@ header::after {
     content: "work";
     position: absolute;
     font-weight: 800;
-    font-size: 500px;
+    font-size: 175px;
     color: #FFF;
     z-index: -1;
-    top: 0;
+    top: 80px;
 }
 
 /*Creates the tilted bottom at services*/
@@ -313,35 +317,26 @@ header::after {
     justify-content: center;
     align-items: center;
     flex-basis: 100%;
-    margin: 300px 15px 100px;
+    margin: 220px 20px 50px;
 }
 
 #studies article {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 100px;
-    max-width: 1300px;
-}
-
-#studies article:nth-child(even) {
-    flex-direction: row-reverse;
+    margin-bottom: 50px;
+    max-width: 500px;
 }
 
 #studies .article-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-left: 20px;
-    padding-right: 20px;
-    flex-basis: 400px;
-    flex-grow: 0;
-    flex-shrink: 0;
+    order: 2;
 }
 
 #studies .article-image {
-    max-width: 60%;
+    order: 1;
 }
 
 #studies .article-image img {
@@ -350,7 +345,8 @@ header::after {
 }
 
 #studies .article-content h2 {
-    margin-bottom: 80px;
+    margin-top: 30px;
+    margin-bottom: 100px;
     position: relative;
 }
 
@@ -408,10 +404,10 @@ header::after {
     content: "services";
     position: absolute;
     font-weight: 800;
-    font-size: 280px;
+    font-size: 100px;
     color: var(--floating-words);
     z-index: -1;
-    top: 0;
+    top: 80px;
 }
 
 .services-grid {
@@ -420,10 +416,10 @@ header::after {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    margin: 235px 130px 130px;
+    max-width: 1300px;
+    margin-top: 165px;
+    margin-bottom: 120px;
     gap: 40px;
-    flex-shrink: 1;
-    flex-grow: 0;
 }
 
 #services article {
@@ -453,8 +449,8 @@ header::after {
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 130px;
     position: relative;
     z-index: 0;
 }
@@ -489,11 +485,13 @@ header::after {
 #contact .small-inner-container {
     align-items: center;
     color: #FFF;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 #contact h2,
 #contact p {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #contact form {
@@ -519,17 +517,172 @@ textarea:focus {
 #contact button {
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 150px;
+    width: 200px;
     position: absolute;
-    bottom: -50px;
-    left: calc(50% - 75px);
+    bottom: -60px;
+    left: calc(50% - 100px);
 }
-
 
 /* --------------- 4.6 Footer ------------------- */
 footer {
     background: var(--standard-text);
+    color: white;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+/* ------------------------------- 5. Media queries ---------------------------------------- */
+@media screen and (min-width: 576px) {
+    h1 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    header p,
+    #contact p {
+        font-size: 18px;
+    }
+
+    #contact h2 {
+        font-size: 42px;
+    }
+
+    #studies h2 {
+        font-size: 32px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    nav a,
+    nav a:visited {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    /* --------------- 3.1 Reusables ----------------------- */
+    .small-inner-container {
+        width: 900px;
+    }
+
+    button {
+        border-radius: 25px;
+    }
+    /* ------------------------------- 4. Areas ---------------------------------------- */
+    /* --------------- 4.1 Header ------------------------- */
+    header {
+        padding-bottom: 200px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav ul {
+        margin-right: 60px;
+    }
+
+    header .small-inner-container {
+        flex-basis: 250px;
+    }
+
+    header button {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 200px;
+    }
+
+    header .squiggle-line-stripe {
+        height: 80px;
+    }
+
+    /* --------------- 4.2 Introduction ------------------- */
+    #introduction .small-inner-container {
+        margin-bottom: 100px;
+    }
+
+    #introduction p {
+        margin-top: 80px;
+    }
+
+    #introduction::before {
+        font-size: 500px;
+        top: -30px;
+    }
+    /* --------------- 4.3 Studies ------------------- */
+    #studies::before {
+        font-size: 500px;
+        top: 0;
+    }
+
+    .bigger-inner-container {
+        margin: 300px 15px 100px;
+    }
+
+    #studies article {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        max-width: 1300px;
+    }
+
+    #studies article:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    #studies .article-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 20px;
+        padding-right: 20px;
+        flex-basis: 400px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 0;
+    }
+
+    #studies .article-image {
+        max-width: 60%;
+        order: 0;
+    }
+
+    #studies .article-content h2 {
+        margin-top: 0;
+        margin-bottom: 80px;
+    }
+    /* --------------- 4.4 Services ------------------- */
+    #services::before {
+        font-size: 280px;
+        top: 0;
+    }
+
+    .services-grid {
+        margin-top: 235px;
+        margin-bottom: 150px;
+    }
+    /* --------------- 4.5 Contact ------------------- */
+    #contact {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+    #contact h2,
+    #contact p {
+        margin-bottom: 20px;
+    }
+
+    #contact button {
+        width: 150px;
+        bottom: -50px;
+        left: calc(50% - 75px);
+    }
+}}
