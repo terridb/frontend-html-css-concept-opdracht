@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media queries
+ /*!///////////////////////!*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather", serif;
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --purple: #5722CD;
+    --blue: #4845E4;
+    --pink: #ED4385;
+    --standard-text: #0C0C0C;
+    --floating-words: #F2F0FF;
+    --project-background: #F3F6F9;
+    --service-tile: #7A7A7A;
+}
+
+body {
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h2,
+h3 {
+    font-size: 1.5rem;
+}
+
+header p {
+    font-size: 1.75rem;
+}
+
+#contact p {
+    font-size: 1.25rem;
+}
+
+footer p {
+    font-size: 0.75rem;
+}
+
+#contact label {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+#contact h2 {
+    font-size: 2.25rem;
+}
+
+#introduction p,
+#studies p {
+    font-size: 1.25rem;
+    color: var(--standard-text)
+}
+
+#introduction a,
+#introduction a:visited {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+button {
+    font-size: 1rem;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#studies h2 {
+    font-size: 2.25rem;
+}
+
+#studies a,
+#studies a:visited {
+    color: var(--purple);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#services h3 {
+    color: var(--purple);
+}
+
+#services p {
+    color: var(--service-tile);
+    font-size: 1rem;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+.small-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button {
+    border: none;
+    background-color: var(--pink);
+    color: #FFF;
+    text-transform: uppercase;
+    border-radius: 30px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 200px;
+    background: var(--blue);
+    background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
+    position: relative;
+    z-index: 0;
+}
+
+/*Adds noise texture to the header image*/
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("assets/noise-texture.png");
+    background-repeat: repeat;
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 60px;
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    color: #FFF;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 400px;
+    list-style: none;
+}
+
+header .small-inner-container {
+    align-items: center;
+    flex-basis: 300px;
+    margin-top: 100px;
+    color: #FFF;
+}
+
+header button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 280px;
+}
+
+header .squiggle-line-stripe {
+    position: absolute;
+    height: 120px;
+    bottom: 0;
+}
+
+/*Creates the tilted bottom on the header*/
+header::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100vw solid #FFF;
+    position: absolute;
+    bottom: 0;
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+#introduction {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+#introduction .small-inner-container {
+    color: var(--purple);
+    text-align: center;
+    margin-bottom: 150px;
+    margin-top: 150px;
+}
+
+#introduction h2 {
+    margin-bottom: 30px;
+}
+
+#introduction p {
+    margin-top: 30px;
+}
+
+/*Adds floating words on the background*/
+#introduction::before {
+    content: "hello";
+    position: absolute;
+    font-weight: 800;
+    font-size: 175px;
+    color: var(--floating-words);
+    z-index: -1;
+    top: 80px;
+}
+
+/*Created tilted top at services, bottom of introduction*/
+#introduction::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;
+    border-right: 100vw solid #FFF;
+    position: absolute;
+    bottom: -49px;
+    z-index: 1;
+}
+
+/* --------------- 4.3 Studies ------------------- */
+#studies {
+    background-color: var(--project-background);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+}
+
+/*Adds floating words on the background*/
+#studies::before {
+    content: "work";
+    position: absolute;
+    font-weight: 800;
+    font-size: 175px;
+    color: #FFF;
+    z-index: -1;
+    top: 80px;
+}
+
+/*Creates the tilted bottom at services*/
+#studies::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100vw solid #FFF;
+    position: absolute;
+    bottom: 0;
+}
+
+.bigger-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    margin: 220px 20px 50px;
+}
+
+#studies article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    max-width: 500px;
+}
+
+#studies .article-content {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+#studies .article-image {
+    order: 1;
+}
+
+#studies .article-image img {
+    width: 100%;
+    box-shadow: 0 24px 24px rgba(0, 0, 0, 0.2);
+}
+
+#studies .article-content h2 {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+/*Makes the squiggle line after the project title*/
+#studies .article-content h2::after {
+    content: "";
+    background-image: url("assets/squiggle_line.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 60px;
+    height: 100%;
+}
+
+#studies .article-content p {
+    margin-bottom: 10px;
+}
+
+#studies .project-link {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/*Adds effect to the project link*/
+.project-link::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: var(--purple);
+    position: absolute;
+    bottom: 9px;
+    left: 130px;
+    transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+    width: 60px;
+}
+
+/* --------------- 4.4 Services ------------------- */
+#services {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+/*Adds floating words on the background*/
+#services::before {
+    content: "services";
+    position: absolute;
+    font-weight: 800;
+    font-size: 100px;
+    color: var(--floating-words);
+    z-index: -1;
+    top: 80px;
+}
+
+.services-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    max-width: 1300px;
+    margin-top: 165px;
+    margin-bottom: 120px;
+    gap: 40px;
+}
+
+#services article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-basis: 380px;
+    min-height: 350px;
+    padding: 40px 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: solid 2px var(--purple);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background: #FFF;
+}
+
+.grid-icon {
+    height: 60px;
+}
+
+/* --------------- 4.5 Contact ------------------- */
+#contact {
+    background: var(--blue);
+    background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding-top: 150px;
+    padding-bottom: 130px;
+    position: relative;
+    z-index: 0;
+}
+
+/*Created tilted top at contact*/
+#contact::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;
+    border-right: 100vw solid #FFF;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+/*Adds noise texture to the contact image*/
+#contact::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("assets/noise-texture.png");
+    background-repeat: repeat;
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#contact .small-inner-container {
+    align-items: center;
+    color: #FFF;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#contact h2,
+#contact p {
+    margin-bottom: 30px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+input,
+textarea {
+    border-radius: 3px;
+    border: 1px solid var(--service-tile);
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+#contact button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 200px;
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 100px);
+}
+
+/* --------------- 4.6 Footer ------------------- */
+footer {
+    background: var(--standard-text);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* ------------------------------- 5. Media queries ---------------------------------------- */
+@media screen and (min-width: 576px) {
+    h1 {
+        font-size: 2.9rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    header p,
+    #contact p {
+        font-size: 1.1rem;
+    }
+
+    #contact h2 {
+        font-size: 2.6rem;
+    }
+
+    #studies h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 0.75rem;
+    }
+
+    nav a,
+    nav a:visited {
+        font-size: 1.1rem;
+        font-weight: 300;
+    }
+
+    /* --------------- 3.1 Reusables ----------------------- */
+    .small-inner-container {
+        width: 900px;
+    }
+
+    button {
+        border-radius: 30px;
+    }
+
+    /* ------------------------------- 4. Areas ---------------------------------------- */
+    /* --------------- 4.1 Header ------------------------- */
+    header {
+        padding-bottom: 200px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav ul {
+        margin-right: 60px;
+    }
+
+    header .small-inner-container {
+        flex-basis: 250px;
+    }
+
+    header button {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 200px;
+    }
+
+    header .squiggle-line-stripe {
+        height: 80px;
+    }
+
+    /* --------------- 4.2 Introduction ------------------- */
+    #introduction .small-inner-container {
+        margin-bottom: 100px;
+    }
+
+    #introduction p {
+        margin-top: 80px;
+    }
+
+    #introduction::before {
+        font-size: 500px;
+        top: -30px;
+    }
+
+    /* --------------- 4.3 Studies ------------------- */
+    #studies::before {
+        font-size: 500px;
+        top: 0;
+    }
+
+    .bigger-inner-container {
+        margin: 300px 15px 100px;
+    }
+
+    #studies article {
+        flex-direction: row;
+        margin-bottom: 100px;
+        max-width: 1300px;
+    }
+
+    #studies article:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    #studies .article-content {
+        justify-content: space-between;
+        margin-left: 20px;
+        padding-right: 20px;
+        flex-basis: 400px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 0;
+    }
+
+    #studies .article-image {
+        max-width: 60%;
+        order: 0;
+    }
+
+    #studies .article-content h2 {
+        margin-top: 0;
+        margin-bottom: 80px;
+    }
+
+    /* --------------- 4.4 Services ------------------- */
+    #services::before {
+        font-size: 280px;
+        top: 0;
+    }
+
+    .services-grid {
+        margin-top: 235px;
+        margin-bottom: 150px;
+    }
+
+    /* --------------- 4.5 Contact ------------------- */
+    #contact {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #contact h2,
+    #contact p {
+        margin-bottom: 20px;
+    }
+
+    #contact button {
+        width: 150px;
+        bottom: -50px;
+        left: calc(50% - 75px);
+    }
+}
